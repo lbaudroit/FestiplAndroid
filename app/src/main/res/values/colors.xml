@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="topbar">@color/orange_light_900</color>
+    <color name="orange">#FF5F3E</color>
+    <color name="orange_light_900">#FF8D4B</color>
+    <color name="orange_dark">#FF3532</color>
+    <color name="orange_light_50">#fffeeb</color>
+    <color name="orange_light_400">#ffe357</color>
+</resources>
