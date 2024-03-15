@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">FestiplAndroid</string>
+
+    <!-- connection -->
+    <string name="description_logo">Logo de l\'application</string>
+    <string name="placeholder_id"><font size="15">Saisir un identifiant</font></string>
+    <string name="placeholder_password"><font size="15">Saisir son mot de passe</font></string>
+    <string name="label_id">Identifiant</string>
+    <string name="label_password">Mot de passe</string>
+    <string name="btn_connect">Se connecter</string>
+
 </resources>

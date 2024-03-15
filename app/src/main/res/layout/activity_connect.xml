@@ -5,63 +5,57 @@
     android:id="@+id/gravity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        app:srcCompat="@mipmap/ic_banner_foreground"
+        tools:srcCompat="@mipmap/ic_banner_foreground"
+        android:contentDescription="@string/description_logo" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="75dp">
 
         <TextView
-            android:id="@+id/titreConnexion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="Connexion"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            app:srcCompat="@mipmap/ic_banner_foreground"
-            tools:srcCompat="@mipmap/ic_banner_foreground" />
-
-        <TextView
-            android:id="@+id/labelLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Identifiant" />
-
+            android:text="@string/label_id"/>
         <EditText
             android:id="@+id/fieldLogin"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="login"
-            android:inputType="text" />
+            android:hint="@string/placeholder_id"
+            android:inputType="text"
+            android:drawableStart="@drawable/baseline_person_24"
+            android:autofillHints="" />
 
         <TextView
-            android:id="@+id/labelPwd"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:text="Mot de passe" />
+            android:text="@string/label_password" />
 
         <EditText
             android:id="@+id/fieldPwd"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword" />
+            android:hint="@string/placeholder_password"
+            android:inputType="textPassword"
+            android:drawableStart="@drawable/baseline_lock_24"
+            android:autofillHints="" />
 
         <Button
             android:id="@+id/btnConnexion"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Se connecter" />
+            android:text="@string/btn_connect" />
+
     </LinearLayout>
 
 </LinearLayout>
