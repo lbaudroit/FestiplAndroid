@@ -30,20 +30,31 @@ import androidx.annotation.NonNull;
  */
 
 public class ItemFestivalAdapter extends ArrayAdapter<ItemFestival> {
+
     /** Identifiant de la vue permettant d'afficher chaque item de la liste */
     private int identifiantVueItem;
+    /**
+     * Objet utilitaire permettant de désérialiser une vue
+     */
+    private LayoutInflater inflater;
+    /** Regroupe les 2 TextView présents sur la vue d'un item de la liste */
+    static class SauvegardeTextView {
+        TextView natureDepense;
+        TextView montantDepense;
+    }
     /**
      * Constructeur de l'adaptateur
      * @param contexte contexte de création de l'adaptateur
      * @param vueItem identifiant de la vue permettant d'afficher chaque
      * item de la liste
-     * @param lesItems Liste des items à afficher (source des données de la
-     * liste à afficher)
+     * @param lesItems Liste de items à afficher
      */
     public ItemFestivalAdapter(Context contexte, int vueItem,
-                              List<ItemFestival> lesItems) {
+                                      List<ItemFestival> lesItems) {
         super(contexte, vueItem, lesItems);
         this.identifiantVueItem = vueItem;
+        inflater = (LayoutInflater)getContext()
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     /**
@@ -55,41 +66,37 @@ public class ItemFestivalAdapter extends ArrayAdapter<ItemFestival> {
      * pour l'élément à afficher. La méthode pourra alors se
      * contenter de réactualiser cette vue
      * @param parent vue parente à laquelle la vue à renvoyer peut être rattachée
-     * @return une vue qui affichera les informations adéquates dans l'item
-     * de la liste situé à la position indiquée en argument
+     * @return une vue qui affichera les informations adéquates dans l'item de la
+     * liste situé à la position p
      */
     @NonNull
     @Override
     public View getView(int position, View uneVue, @NonNull ViewGroup parent) {
-
         // on récupère la valeur de l'item à afficher, via sa position
-        ItemFestival festival = getItem(position);
-        LinearLayout vueItemListe; // layout décrivant un item de la liste
+        ItemFestival ligneBilan = getItem(position);
+        SauvegardeTextView sauve; // regroupe les 2 TextView présents sur la vue
+        // destinée à afficher l'item
         if (uneVue == null) {
-
             /*
              * la vue décrivant chaque item de la liste n'est pas encore créée
              * Il faut désérialiser le layout correspondant à cette vue.
              */
-            LayoutInflater outil;
-            outil = (LayoutInflater)getContext()
-                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            vueItemListe = (LinearLayout) outil.inflate(identifiantVueItem,
-                    parent, false);
-
+            uneVue = inflater.inflate(identifiantVueItem, parent, false);
+            // on récupère un accès sur les 2 TextView qu'il faudra renseigner
+            sauve = new SauvegardeTextView();
+            sauve.natureDepense = uneVue.findViewById(R.id.title);
+            sauve.montantDepense = uneVue.findViewById(R.id.subtitle);
+            // on stocke les identifiants de 2 TextView dans la vue elle-même
+            uneVue.setTag(sauve);
         } else {
-            // la vue permettant d'afficher un item de la liste existe déjà
-            vueItemListe = (LinearLayout) uneVue;
+            // on récupère les identifiants des 2 TextView stockés dans la vue
+            sauve = (SauvegardeTextView) uneVue.getTag();
         }
-
-        // on accède aux 2 widgets présents sur la vue
-        TextView vueNature = vueItemListe.findViewById(R.id.title);
-        TextView vueMontant = vueItemListe.findViewById(R.id.subtitle);
-
-        // on place dans les 2 widgets les valeurs de l'item à afficher
-        assert festival != null;
-        vueNature.setText(festival.getNom());
-        vueMontant.setText(festival.getDuree());
-        return vueItemListe;
+        // on place dans les 2 TextView les valeurs de l'item à afficher
+        assert ligneBilan != null;
+        sauve.natureDepense.setText(ligneBilan.getNom());
+        sauve.montantDepense.setText(ligneBilan.getDuree());
+        return uneVue;
     }
+
 }
