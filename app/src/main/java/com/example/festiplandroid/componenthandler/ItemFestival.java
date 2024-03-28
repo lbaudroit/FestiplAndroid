@@ -3,7 +3,7 @@
  * ItemFestival.java                          02/24
  */
 
-package com.example.festiplandroid;
+package com.example.festiplandroid.componenthandler;
 
 /**
  * Cette classe rassemble les 3 informations qui apparaîtront en tant
@@ -23,15 +23,21 @@ public class ItemFestival {
     /** Durée du festival */
     private final String duree;
 
+    private final int id;
+
+    private final int isFavorite;
+
 
     /**
      * Constructeur avec en argument les valeurs des attributs
      * @param nom nom du festival
      * @param duree durée du festival
      */
-    public ItemFestival(String nom, String duree) {
+    public ItemFestival(String nom, String duree, int id, int isFavorite) {
         this.nom = nom;
         this.duree = duree;
+        this.id = id;
+        this.isFavorite = isFavorite;
     }
     /**
      * Accesseur du nom du festival
@@ -48,4 +54,8 @@ public class ItemFestival {
     public String getDuree() {
         return duree;
     }
+
+    public int getId() { return id; }
+
+    public int getFavoriteState() { return isFavorite; }
 }

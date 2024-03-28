@@ -8,4 +8,7 @@
     <color name="orange_dark">#FF3532</color>
     <color name="orange_light_50">#fffeeb</color>
     <color name="orange_light_400">#ffe357</color>
+    <color name="dark_gray">#67627F</color>
+    <color name="light_gray">#5C728A</color>
+
 </resources>

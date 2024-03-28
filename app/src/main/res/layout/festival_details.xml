@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Vue concernant les détails liés à un festival spécifique : permet d'afficher :
+         - Le nom du festival
+         - Le type de festival (sous forme de chip)
+         - La durée du festival
+         - La description du festival
+         - La liste des organisateurs
+         - La liste des spectacles -->
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+    <!-- Zone de titre contenant le nom et le type -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:gravity="start"
+            android:text="Nom du festival"
+            android:textAppearance="@style/title" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <com.google.android.material.chip.Chip
+                style="@style/Colors_Widget.MaterialComponents.Chip.Choice"
+                android:id="@+id/chip"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="45dp"
+                android:text="Théâtre"
+                android:focusable="false"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+        <!-- Durée du festival écrit sous la forme : "Du XX mois XXXX au XX mois XXXX" -->
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/duration"
+            android:layout_marginBottom="@dimen/small_size"/>
+
+        <!-- Zone concernant la description du festival -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/festival_description"
+            android:textAppearance="@style/subtitle" />
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginBottom="@dimen/small_size"/>
+
+        <!-- Zone listant tous les organisateurs du festival -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/organizers"
+            android:textAppearance="@style/subtitle" />
+        <ListView
+            android:id="@+id/listOrganizer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"/>
+
+        <!-- Zone listant tous les spectacles du festival -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/spectacles"
+            android:textAppearance="@style/subtitle" />
+        <ListView
+            android:id="@+id/listShow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+</LinearLayout>

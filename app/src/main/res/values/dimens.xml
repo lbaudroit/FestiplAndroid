@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- dimensions utilisées dans tous les xml -->
+    <dimen name="null_size">0dp</dimen>
+    <dimen name="small_size">5dp</dimen>
+    <dimen name="medium_size">10dp</dimen>
+
+    <!-- dimensions propre à la page de connexion -->
+    <dimen name="connexion_large_horizontal_margin">75dp</dimen>
+</resources>

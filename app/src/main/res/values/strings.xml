@@ -8,5 +8,16 @@
     <string name="label_id">Identifiant</string>
     <string name="label_password">Mot de passe</string>
     <string name="btn_connect">Se connecter</string>
+    <string name="messageToast">Attention, vous devez saisir à la fois votre identifiant et votre mot de passe !</string>
+    <string name="messageToast2">problème d\'encodage.. ?</string>
+    <string name="messageToast3">Identifiant ou mot de passe incorrect !</string>
+    <string name="message_erreur">NOOOOOOOOON</string>
+    <string name="message_toast_test">y\'a eu un clic là</string>
+    <string name="no_festival">Aucun festival à afficher</string>
+    <string name="duration">Du %s au %s</string>
+    <string name="custom_list_festival_list">Titre du festival</string>
+    <string name="festival_description">Description</string>
+    <string name="organizers">Organisateurs</string>
+    <string name="spectacles">Spectacles</string>
 
 </resources>

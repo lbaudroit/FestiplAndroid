@@ -1,36 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Element customisé pour une liste : permet, pour chaque élément
+     de la liste d'afficher :
+         - le nom du festival
+         - la durée du festival
+         - une checkbox de mise en favori du festival. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
+    <!-- Zone informative contenant le nom et la durée -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:paddingVertical="@dimen/medium_size"
+        android:layout_marginStart="@dimen/medium_size">
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Titre du festival"
-            android:textStyle="bold"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:padding="2dp"
-            android:textColor="#4d4d4d" />
+            android:text="@string/custom_list_festival_list"
+            android:textAppearance="@style/list_title"/>
         <TextView
             android:id="@+id/subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="sous-titre du festival (si besoin ?)"
-            android:layout_marginStart="10dp"/>
+            android:text="@string/duration"
+            android:textAppearance="@style/list_subtitle"/>
    </LinearLayout>
+
+    <!-- Checkbox customisée en forme d'étoile -->
     <CheckBox
         android:id="@+id/checkbox"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:button="@drawable/custom_checkbox" />
+        android:button="@drawable/custom_checkbox"
+        />
 </LinearLayout>

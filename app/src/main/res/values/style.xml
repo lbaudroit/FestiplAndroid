@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Colors_Widget.MaterialComponents.Chip.Choice" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">#FF3433</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="title">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textFontWeight">900</item>
+    </style>
+
+    <style name="subtitle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+
+
+    <style name="list_title">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+
+    <style name="list_subtitle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:textColor">@color/dark_gray</item>
+    </style>
+</resources>
